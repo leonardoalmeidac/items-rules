@@ -1,0 +1,79 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"> <b> Items Rules </b> </a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3 text-center">
+                    Descripcion Item
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Producto</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Item" [(ngModel)]="descripcion_item" [disabled]="(!index_item) ? false : true">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Precio Item</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Precio" [(ngModel)]="precio_item">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" (click)="guardarItems()">Guardar</button>
+                </div>
+            </div>
+            <div class="col order-1">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"> Item </th>
+                            <th scope="col"> Precio </th>
+                            <th scope="col"> Categoria </th>
+                            <th scope="col"> Tools </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of items; index as i">
+                            <th scope="row">{{i}}</th>
+                            <td> {{item.descripcion}} </td>
+                            <td> {{item.precio}} </td>
+                            <td> {{item.categoria}} </td>
+                            <td>
+                                <button type="button" class="btn btn-info" *ngIf="(item.precio == obj_category.medio || item.precio == obj_category.alto)" (click)="editItems(item, i)">Editar</button>
+                                <!-- <a href="" *ngIf="(item.precio == 2000 || item.precio == 5000)"> Editar </a> -->
+                                <span *ngIf="(item.precio != obj_category.medio && item.precio != obj_category.alto)"> No editable. </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <div class="mb-3 text-center">
+                    Configuracion Categoria
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">  Alto (Mayor o igual)</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Categoria Alto" [(ngModel)]="categoria_alto">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">  Medio (Mayor a, y menor o igual a categoria alto) </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Categoria Medio" [(ngModel)]="categoria_medio">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"> Bajo (Menor o Igual a)</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Categoria Bajo" [(ngModel)]="categoria_bajo">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" (click)="updateCategorias()">Guardar Categorias</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

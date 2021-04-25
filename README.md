@@ -1,20 +1,27 @@
-# items-rules
-Prototipo de Validación de Reglas - Angular V10.0.0
+# ItemsRules
 
-Prototipo de Reglas
-Es una web SPA desarrollado con tecnologías como Angular, Bootstrap y SweetAlert, mismo que permitirá ingresar descripción y precio de un item, los mismos que se asignarán de manera dinámica a una categoría de precio previamente definida, estas categorías puedes ser modificadas, y en caso de que los precios de los items en primera instancia sean $2000 o $5000 habilitarán de forma automática un botón editar.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
-Installation
-Use the package manager pip to install foobar.
+## Development server
 
-npm install
-Usage
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-ng serve -o
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Code scaffolding
 
-Please make sure to update tests as appropriate.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-License
-MIT
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
